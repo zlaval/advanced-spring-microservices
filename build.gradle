@@ -25,14 +25,18 @@ subprojects {
 
     apply plugin: 'java'
     apply plugin: 'org.springframework.boot'
-    
+
     targetCompatibility = 1.8
     sourceCompatibility = 1.8
-    
+
     ext {
         springCloudVersion = 'Greenwich.M1'
     }
-    
+
+    dependencies{
+        compileOnly('org.projectlombok:lombok')
+    }
+
     dependencyManagement {
         imports {
             mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
