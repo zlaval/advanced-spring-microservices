@@ -1,9 +1,6 @@
 server:
   port: 8010
 
-eureka:
-  client:
-    fetch-registry: false
-    register-with-eureka: false
+#eureka:
 #  server:
-    ##    wait-time-in-ms-when-sync-empty: 5
+#    wait-time-in-ms-when-sync-empty: 5
