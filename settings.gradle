@@ -1,3 +1,4 @@
 rootProject.name = 'advanced-microservices'
 include 'eureka-server'
+include 'config-server'
 
