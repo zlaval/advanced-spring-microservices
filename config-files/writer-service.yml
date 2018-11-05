@@ -8,7 +8,4 @@ spring:
     properties:
       hibernate:
         hbm2ddl:
-          auto: validate
-
-liquibase:
-  change-log: 'classpath:changelog.yml'
+          auto: none
