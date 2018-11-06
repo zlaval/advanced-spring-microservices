@@ -8,3 +8,5 @@ spring:
         git:
           uri: https://github.com/zlaval/advanced-spring-microservices/
           search-paths: config-files
+        encrypt:
+          enabled: false
