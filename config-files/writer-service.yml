@@ -3,7 +3,7 @@ spring:
     driverClassName: org.h2.Driver
     url: 'jdbc:h2:mem:testdb'
     username: sa
-    password: sa
+    password: "{cipher}c24175513bec59f8ccf7d45ff71bd6b3464206748327a5ee9dd04e1199581e12"
   h2:
     console:
       enabled: true

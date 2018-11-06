@@ -13,7 +13,7 @@ import java.io.Serializable;
 public class Writer implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Basic
