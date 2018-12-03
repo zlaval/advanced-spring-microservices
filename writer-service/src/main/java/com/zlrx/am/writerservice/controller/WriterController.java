@@ -1,6 +1,6 @@
 package com.zlrx.am.writerservice.controller;
 
-import com.zlrx.am.writerservice.domain.Writer;
+import com.zlrx.am.writerservice.model.AuthorBooks;
 import com.zlrx.am.writerservice.service.WriterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +15,7 @@ public class WriterController {
     private WriterService writerService;
 
     @GetMapping
-    public Iterable<Writer> getWriters() {
+    public Iterable<AuthorBooks> getWriters() {
         return writerService.fetchWriters();
     }
 

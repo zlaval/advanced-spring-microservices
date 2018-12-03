@@ -1,10 +1,10 @@
 databaseChangeLog:
 - changeSet:
-    id: 201811032213-1
+    id: 201812012205-0
     author: zalerix
     changes:
     - createTable:
-        tableName: writer
+        tableName: book
         columns:
         - column:
             name: id
@@ -14,14 +14,17 @@ databaseChangeLog:
               primaryKey: true
               nullable: false
         - column:
-            name: name
+            name: author_id
+            type: bigint
+        - column:
+            name: title
             type: varchar(100)
 - changeSet:
-    id: 201811062105-1
+    id: 201812012205-1
     author: zalerix
     changes:
       loadData:
-        tableName: writer
-        file: db/changelog/migration/writers.csv
+        tableName: book
+        file: db/changelog/migration/books.csv
         encoding: UTF-8
         separator: ","
