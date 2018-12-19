@@ -14,6 +14,11 @@ public class BookService {
     private BookRepository bookRepository;
 
     public Iterable<Book> findAll() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return bookRepository.findAll();
     }
 
