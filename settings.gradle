@@ -3,4 +3,5 @@ include 'eureka-server'
 include 'config-server'
 include 'writer-service'
 include 'book-service'
+include 'zuul-server'
 

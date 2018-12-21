@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RequestMapping("api/v1/writer")
 @RestController
 public class WriterController {
@@ -14,8 +16,12 @@ public class WriterController {
     @Autowired
     private WriterService writerService;
 
+    @Autowired
+    private HttpServletRequest request;
+
     @GetMapping
     public Iterable<AuthorBooks> getWriters() {
+        String correlationId = request.getHeader("correlation_id");
         return writerService.fetchWriters();
     }
 

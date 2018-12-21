@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: zuul-service
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka/
+zuul:
+  routes:
+    book-service: /book/**
+  ignored-services: 'book-service'
+#  prefix: services
