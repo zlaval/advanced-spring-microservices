@@ -11,7 +11,3 @@ spring:
       name: zalerix
       password: zlrx
       roles: ADMIN,USER
-    user:
-      name: nvevermind
-      password: nvm
-      roles: USER

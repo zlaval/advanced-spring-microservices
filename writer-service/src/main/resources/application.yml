@@ -1,2 +1,6 @@
 server:
   port: 8013
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:8020/auth/user
