@@ -1,0 +1,17 @@
+server:
+  port: 8020
+security:
+  oauth2:
+    client:
+      client-id: writer-service
+      client-secret: mysecret
+spring:
+  security:
+    user:
+      name: zalerix
+      password: zlrx
+      roles: ADMIN,USER
+    user:
+      name: nvevermind
+      password: nvm
+      roles: USER
