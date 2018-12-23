@@ -20,4 +20,5 @@ zuul:
   routes:
     book-service: /book/**
   ignored-services: 'book-service'
+  sensitive-headers: Cookie,Set-Cookie
 #  prefix: services
