@@ -12,6 +12,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @SpringBootApplication
 @EnableEurekaClient
 @EnableResourceServer
+//@EnableBinding(Source.class)
 public class WriterServiceApplication {
 
     public static void main(String... args) {

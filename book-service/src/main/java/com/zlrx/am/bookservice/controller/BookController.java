@@ -5,6 +5,7 @@ import com.zlrx.am.bookservice.domain.Book;
 import com.zlrx.am.bookservice.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,6 +20,11 @@ public class BookController {
     public Iterable<Book> getBooks() {
         return bookService.findAll();
 
+    }
+
+    @GetMapping("/{authorId}")
+    public Book getBook(@PathVariable("authorId") Long authorId) {
+        return bookService.findFirstByAuthorId(authorId);
     }
 
 }

@@ -34,6 +34,10 @@ public class WriterService {
     @Autowired
     private WriterRepository writerRepository;
 
+    public Book getAuthorFirstBook(Long authorId) {
+        return bookFeignClient.getBook(authorId);
+    }
+
     @HystrixCommand(
             fallbackMethod = "fallbackWriters",
             threadPoolKey = "bookServiceThreadPool",

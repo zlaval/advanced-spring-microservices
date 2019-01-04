@@ -22,5 +22,9 @@ public class BookService {
         return bookRepository.findAll();
     }
 
+    public Book findFirstByAuthorId(Long authorId) {
+        return bookRepository.findFirstByAuthorId(authorId);
+    }
+
 
 }

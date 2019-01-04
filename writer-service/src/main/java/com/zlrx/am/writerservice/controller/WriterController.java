@@ -1,9 +1,11 @@
 package com.zlrx.am.writerservice.controller;
 
 import com.zlrx.am.writerservice.model.AuthorBooks;
+import com.zlrx.am.writerservice.model.Book;
 import com.zlrx.am.writerservice.service.WriterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,6 +25,11 @@ public class WriterController {
     public Iterable<AuthorBooks> getWriters() {
         String correlationId = request.getHeader("correlation_id");
         return writerService.fetchWriters();
+    }
+
+    @GetMapping("/firstbook/{authorId}")
+    public Book getBook(@PathVariable("authorId") Long authorId) {
+        return writerService.getAuthorFirstBook(authorId);
     }
 
 }
