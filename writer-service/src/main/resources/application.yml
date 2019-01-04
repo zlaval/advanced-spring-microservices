@@ -4,3 +4,14 @@ security:
   oauth2:
     resource:
       user-info-uri: http://localhost:8020/auth/user
+spring:
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: output
+          content-type: application/json
+          group: writer-group
+      kafka:
+        binder:
+          brokers: localhost
