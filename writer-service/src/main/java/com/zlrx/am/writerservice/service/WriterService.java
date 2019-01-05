@@ -6,6 +6,7 @@ import com.zlrx.am.writerservice.domain.Writer;
 import com.zlrx.am.writerservice.feign.BookFeignClient;
 import com.zlrx.am.writerservice.model.AuthorBooks;
 import com.zlrx.am.writerservice.model.Book;
+import com.zlrx.am.writerservice.repository.BookRedisRepository;
 import com.zlrx.am.writerservice.repository.WriterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -34,8 +36,18 @@ public class WriterService {
     @Autowired
     private WriterRepository writerRepository;
 
+    @Autowired
+    private BookRedisRepository bookRedisRepository;
+
     public Book getAuthorFirstBook(Long authorId) {
-        return bookFeignClient.getBook(authorId);
+        Book cachedBook = bookRedisRepository.findFirst(authorId);
+        if (Objects.nonNull(cachedBook)) {
+            return cachedBook;
+        } else {
+            Book book = bookFeignClient.getBook(authorId);
+            bookRedisRepository.save(book);
+            return book;
+        }
     }
 
     @HystrixCommand(
