@@ -10,4 +10,5 @@ import lombok.Setter;
 public class BookChangeModel {
     private String action;
     private Long bookId;
+    private Long authorId;
 }

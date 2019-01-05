@@ -11,8 +11,8 @@ public class SimpleSourceBean {
     @Autowired
     private Source source;
 
-    public void publishBookChange(String action, Long bookId) {
-        BookChangeModel bookChangeModel = new BookChangeModel(action, bookId);
+    public void publishBookChange(String action, Long bookId, Long authorId) {
+        BookChangeModel bookChangeModel = new BookChangeModel(action, bookId, authorId);
         source.output().send(MessageBuilder.withPayload(bookChangeModel).build());
     }
 

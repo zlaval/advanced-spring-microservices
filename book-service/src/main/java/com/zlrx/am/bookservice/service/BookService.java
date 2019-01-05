@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Service
 @Transactional
 public class BookService {
@@ -31,9 +33,11 @@ public class BookService {
     }
 
     public void removeBook(Long bookId) {
-        bookRepository.deleteById(bookId);
-        simpleSourceBean.publishBookChange("DELETE", bookId);
+        Optional<Book> book = bookRepository.findById(bookId);
+        book.ifPresent(b -> {
+            bookRepository.delete(b);
+            simpleSourceBean.publishBookChange("DELETE", b.getId(), b.getAuthorId());
+        });
     }
-
 
 }

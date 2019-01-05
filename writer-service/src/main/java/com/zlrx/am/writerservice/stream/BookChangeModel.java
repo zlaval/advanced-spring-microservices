@@ -14,4 +14,5 @@ import lombok.ToString;
 public class BookChangeModel {
     private String action;
     private Long bookId;
+    private Long authorId;
 }

@@ -29,8 +29,8 @@ public class BookRedisRepositoryImpl implements BookRedisRepository {
     }
 
     @Override
-    public void delete(Book book) {
-        hashOperations.delete(HASH_NAME, book.getAuthorId());
+    public void delete(Long authorId) {
+        hashOperations.delete(HASH_NAME, authorId);
     }
 
     @Override

@@ -8,7 +8,7 @@ public interface BookRedisRepository {
 
     void save(Book book);
 
-    void delete(Book book);
+    void delete(Long authorId);
 
     Book findFirst(Long authorId);
 

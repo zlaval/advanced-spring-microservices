@@ -1,6 +1,5 @@
 package com.zlrx.am.writerservice;
 
-import com.zlrx.am.writerservice.stream.BookChangeModel;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,7 +7,6 @@ import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.cloud.stream.annotation.EnableBinding;
-import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.cloud.stream.messaging.Sink;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
@@ -48,11 +46,5 @@ public class WriterServiceApplication {
         redisTemplate.setConnectionFactory(jedisConnectionFactory());
         return redisTemplate;
     }
-
-    @StreamListener(Sink.INPUT)
-    public void logMessage(BookChangeModel model) {
-        System.out.println(model.toString());
-    }
-
 
 }
