@@ -5,4 +5,5 @@ include 'writer-service'
 include 'book-service'
 include 'zuul-server'
 include 'authentication-service'
+include 'zipkin-server'
 

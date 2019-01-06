@@ -10,6 +10,7 @@ dependencies {
     implementation('org.liquibase:liquibase-core')
     implementation('org.springframework.cloud:spring-cloud-stream')
     implementation('org.springframework.cloud:spring-cloud-starter-sleuth')
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-sleuth-zipkin'
     implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-stream-kafka'
     runtimeOnly('com.h2database:h2')
 }
