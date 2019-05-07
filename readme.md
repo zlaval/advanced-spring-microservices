@@ -3,6 +3,7 @@
 
 get token: localhost:8020/oauth/token
 
+(hash=writer-service:mysecret)
 header:  
 [{"key":"Authorization","value":"Basic d3JpdGVyLXNlcnZpY2U6bXlzZWNyZXQ=","description":""}]  
 body:  

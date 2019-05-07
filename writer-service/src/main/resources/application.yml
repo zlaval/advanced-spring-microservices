@@ -3,7 +3,7 @@ server:
 security:
   oauth2:
     resource:
-      user-info-uri: http://localhost:8020/auth/user
+      user-info-uri: http://authentication-service:8020/auth/user
 spring:
   cloud:
     stream:
@@ -14,12 +14,12 @@ spring:
           group: writer-group
       kafka:
         binder:
-          brokers: localhost
+          brokers: kafka-server
   sleuth:
     sampler:
       probability: 1
   zipkin:
-    base-url: http://localhost:8014
+    base-url: http://zipkin-server:8014
 redis:
-  host: 192.168.99.100
+  host: http://redis-server
   port: 6379

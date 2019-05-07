@@ -9,9 +9,9 @@ spring:
           content-type: application/json
       kafka:
         binder:
-          brokers: localhost
+          brokers: kafka-server
   sleuth:
     sampler:
       probability: 1
   zipkin:
-    base-url: http://localhost:8014
+    base-url: http://zipkin-server:8014

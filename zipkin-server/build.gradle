@@ -1,5 +1,5 @@
-dependencies{
-    //implementation group: 'io.zipkin.java', name: 'zipkin-server', version: '2.11.12'
-   // implementation group: 'io.zipkin.java', name: 'zipkin-autoconfigure-ui', version: '2.11.12'
+dependencies {
+    implementation group: 'io.zipkin.java', name: 'zipkin-server', version: '2.11.12'
+    // implementation group: 'io.zipkin.java', name: 'zipkin-autoconfigure-ui', version: '2.11.12'
     implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
 }

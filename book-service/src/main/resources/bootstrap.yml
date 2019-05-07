@@ -3,8 +3,12 @@ spring:
     name: book-service
   cloud:
     config:
-      uri: http://localhost:8011
+      uri: http://config-server:8011
       fail-fast: true
+      retry:
+        initial-interval: 3000
+        max-interval: 5000
+        max-attempts: 10
 eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
